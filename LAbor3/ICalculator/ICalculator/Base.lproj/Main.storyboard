@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ICalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aa5-mc-pNJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="x33-rQ-b0v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="5qh-5N-Vn2">
+                                <rect key="frame" x="16" y="20" width="343" height="300"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OX5-pn-Yel" userLabel="inputTextFieldA">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="05G-cv-IMZ">
+                                        <rect key="frame" x="0.0" y="70.5" width="343" height="29"/>
+                                        <segments>
+                                            <segment title="+"/>
+                                            <segment title="*"/>
+                                            <segment title="/"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="operationSelectorValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="XvN-IA-CHS"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M4B-3w-O1g" userLabel="inputTextFieldB">
+                                        <rect key="frame" x="0.0" y="139" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dt8-jc-cFD" userLabel="calculateButton">
+                                        <rect key="frame" x="0.0" y="209" width="343" height="30"/>
+                                        <state key="normal" title="Eredmény kiszámítása"/>
+                                        <connections>
+                                            <action selector="calculateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YEh-Qc-Pat"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4J-D7-NL0" userLabel="resultLabel">
+                                        <rect key="frame" x="0.0" y="279.5" width="343" height="20.5"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="BvO-dc-h7Z"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5qh-5N-Vn2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0F0-jk-dw1"/>
+                            <constraint firstItem="5qh-5N-Vn2" firstAttribute="top" secondItem="aa5-mc-pNJ" secondAttribute="bottom" id="5VK-8R-xaI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5qh-5N-Vn2" secondAttribute="trailing" id="AIN-1k-XSo"/>
+                        </constraints>
+                        <connections>
+                            <action selector="onBackgroundTuochUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ebm-2A-KSH"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="inputTextFieldA" destination="OX5-pn-Yel" id="JmP-1e-1H3"/>
+                        <outlet property="inputTextFieldB" destination="M4B-3w-O1g" id="DIU-rL-l2L"/>
+                        <outlet property="operationSelector" destination="05G-cv-IMZ" id="0PG-8v-3Ns"/>
+                        <outlet property="resultLabel" destination="i4J-D7-NL0" id="FoO-C1-iM4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="85.599999999999994" y="148.87556221889056"/>
+        </scene>
+    </scenes>
+</document>
